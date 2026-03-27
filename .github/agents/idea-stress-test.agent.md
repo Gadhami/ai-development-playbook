@@ -1,5 +1,5 @@
 ---
-name: Devils Advocate
+name: Idea Stress Test
 description: >
   Challenge and stress-test ideas by finding flaws, risks, and edge cases.
   Use when you want your concept battle-tested before implementation.

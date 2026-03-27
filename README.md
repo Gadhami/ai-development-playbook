@@ -56,7 +56,7 @@ See [docs/hierarchy.md](docs/hierarchy.md) for details.
 |---|---|
 | `@architect` | Orchestrates complex tasks through a multi-agent pipeline: analyze → implement → review → verify |
 | `@reviewer` | Deep code review with structured findings and traceability |
-| `@devils-advocate` | Stress-tests ideas by finding flaws, risks, and edge cases |
+| `@idea-stress-test` | Stress-tests ideas by finding flaws, risks, and edge cases |
 | `@incident` | End-to-end incident resolution with root cause analysis |
 | `@documenter` | Generates comprehensive repository documentation |
 
@@ -67,6 +67,44 @@ See [docs/hierarchy.md](docs/hierarchy.md) for details.
 | `/unit-tests` | Generate high-quality unit tests for selected code |
 | `/code-review` | Review code for quality, security, and architectural compliance |
 | `/plandek-report` | Generate engineering metrics report (opt-in, activated on request) |
+
+## Repository Structure
+
+```
+ai-dev-playbook/
+├── README.md
+├── .gitignore
+├── _prompt/generation-prompt.md           # Original prompt — regenerate from scratch
+│
+├── .github/                               # ← Copy this folder to any project
+│   ├── copilot-instructions.md            # Fullstack profile (default)
+│   ├── instructions/
+│   │   ├── csharp.instructions.md         # Auto-applies to *.cs
+│   │   ├── angular.instructions.md        # Auto-applies to *.ts
+│   │   ├── testing-dotnet.instructions.md # Auto-applies to *Tests*/*.cs
+│   │   └── testing-angular.instructions.md# Auto-applies to *.spec.ts
+│   ├── agents/
+│   │   ├── architect.agent.md             # Multi-agent pipeline orchestrator
+│   │   ├── analyzer.agent.md              #   └─ Request analysis (internal)
+│   │   ├── implementer.agent.md           #   └─ Implementation (internal)
+│   │   ├── reviewer.agent.md              # Code review (standalone or pipeline)
+│   │   ├── idea-stress-test.agent.md      # Stress-test ideas (devil's advocate)
+│   │   ├── incident.agent.md              # Incident resolution
+│   │   └── documenter.agent.md            # Generate repo documentation
+│   └── prompts/
+│       ├── unit-tests.prompt.md
+│       ├── code-review.prompt.md
+│       └── plandek-report.prompt.md       # Opt-in metrics report
+│
+├── profiles/                              # Pick one → copy as copilot-instructions.md
+│   ├── backend-dotnet.md                  # .NET + Clean Architecture
+│   ├── frontend-angular.md                # Angular + Signals + Standalone
+│   └── fullstack.md                       # Both combined
+│
+└── docs/
+    ├── setup.md                           # Deployment options
+    └── hierarchy.md                       # Company → Product override model
+```
 
 ## Design Principles
 
