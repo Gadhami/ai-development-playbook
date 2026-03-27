@@ -9,8 +9,8 @@
 
 ```bash
 # Example: setting up a .NET backend project
-cp -r /path/to/ai-dev-playbook/.github/ /path/to/your-project/.github/
-cp /path/to/ai-dev-playbook/profiles/backend-dotnet.md /path/to/your-project/.github/copilot-instructions.md
+cp -r /path/to/ai-development-playbook/.github/ /path/to/your-project/.github/
+cp /path/to/ai-development-playbook/profiles/backend-dotnet.md /path/to/your-project/.github/copilot-instructions.md
 ```
 
 ## Option 2: Git Submodule (Auto-Updating)
@@ -21,7 +21,7 @@ Add this repo as a submodule, then symlink or copy the files:
 cd /path/to/your-project
 
 # Add as submodule
-git submodule add https://github.com/Gadhami/ai-dev-playbook .github/ai-playbook
+git submodule add https://github.com/Gadhami/ai-development-playbook .github/ai-playbook
 
 # Copy files (repeat after pulling submodule updates)
 cp -r .github/ai-playbook/.github/instructions/ .github/instructions/
@@ -43,7 +43,7 @@ cp -r .github/ai-playbook/.github/prompts/ .github/prompts/
 Pull the latest from the template repo and copy what you need:
 
 ```bash
-cd /path/to/ai-dev-playbook
+cd /path/to/ai-development-playbook
 git pull
 
 # Sync to your project (preserves your copilot-instructions.md)
