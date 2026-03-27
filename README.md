@@ -1,4 +1,4 @@
-# AI Dev Playbook
+# AI Development Playbook
 
 A plug-and-play template for AI-assisted software development. Designed for team leads integrating into new teams, this playbook improves code quality and productivity by giving AI coding assistants precise, high-signal instructions.
 
@@ -91,7 +91,7 @@ ai-development-playbook/
 │   │   ├── analyzer.agent.md              #   └─ Request analysis (internal)
 │   │   ├── implementer.agent.md           #   └─ Implementation (internal)
 │   │   ├── reviewer.agent.md              # Code review (standalone or pipeline)
-│   │   ├── idea-stress-test.agent.md      # Stress-test ideas (devil's advocate)
+│   │   ├── idea-stress-test.agent.md      # Stress-test ideas
 │   │   ├── incident.agent.md              # Incident resolution
 │   │   └── documenter.agent.md            # Generate repo documentation
 │   └── prompts/
