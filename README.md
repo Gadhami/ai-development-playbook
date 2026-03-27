@@ -85,7 +85,12 @@ ai-development-playbook/
 │   │   ├── csharp.instructions.md         # Auto-applies to *.cs
 │   │   ├── angular.instructions.md        # Auto-applies to *.ts
 │   │   ├── testing-dotnet.instructions.md # Auto-applies to *Tests*/*.cs
-│   │   └── testing-angular.instructions.md# Auto-applies to *.spec.ts
+│   │   ├── testing-angular.instructions.md# Auto-applies to *.spec.ts
+│   │   └── testing-e2e.instructions.md    # Auto-applies to e2e/playwright/cypress
+│   ├── skills/
+│   │   ├── clean-architecture/SKILL.md    # .NET Clean Architecture patterns
+│   │   ├── angular-patterns/SKILL.md      # Angular component & service patterns
+│   │   └── unit-test-patterns/SKILL.md    # .NET & Angular test examples
 │   ├── agents/
 │   │   ├── architect.agent.md             # Multi-agent pipeline orchestrator
 │   │   ├── analyzer.agent.md              #   └─ Request analysis (internal)
