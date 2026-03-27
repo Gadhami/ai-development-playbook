@@ -77,7 +77,10 @@ ai-development-playbook/
 ├── _prompt/generation-prompt.md           # Original prompt — regenerate from scratch
 │
 ├── .github/                               # ← Copy this folder to any project
-│   ├── copilot-instructions.md            # Fullstack profile (default)
+│   ├── copilot-instructions.md            # Chat & completions (fullstack default)
+│   ├── copilot-code-review-instructions.md# Automated PR review guidelines
+│   ├── workflows/
+│   │   └── copilot-review.yml             # Auto-requests Copilot review on PRs
 │   ├── instructions/
 │   │   ├── csharp.instructions.md         # Auto-applies to *.cs
 │   │   ├── angular.instructions.md        # Auto-applies to *.ts
