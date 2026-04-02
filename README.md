@@ -1,6 +1,6 @@
-# AI Development Playbook
+# Copilot Instructions
 
-A plug-and-play template for AI-assisted software development. Designed for team leads integrating into new teams, this playbook improves code quality and productivity by giving AI coding assistants precise, high-signal instructions.
+A plug-and-play template for AI-assisted software development. Designed for team leads integrating into new teams, this kit improves code quality and productivity by giving AI coding assistants precise, high-signal instructions.
 
 ## What's Inside
 
@@ -31,9 +31,9 @@ After template improvements, sync to your project:
 
 ```bash
 # From your project root — copies shared files, preserves your copilot-instructions.md
-cp -r /path/to/ai-development-playbook/.github/instructions/ .github/instructions/
-cp -r /path/to/ai-development-playbook/.github/agents/ .github/agents/
-cp -r /path/to/ai-development-playbook/.github/prompts/ .github/prompts/
+cp -r /path/to/copilot-instructions/.github/instructions/ .github/instructions/
+cp -r /path/to/copilot-instructions/.github/agents/ .github/agents/
+cp -r /path/to/copilot-instructions/.github/prompts/ .github/prompts/
 ```
 
 Or use git submodules for automatic syncing — see [docs/setup.md](docs/setup.md).
@@ -43,7 +43,7 @@ Or use git submodules for automatic syncing — see [docs/setup.md](docs/setup.m
 This template supports a layered override model:
 
 ```
-ai-development-playbook (universal standards)
+copilot-instructions (universal standards)
   └── Company-level overrides (your org standards)
        └── Product-level overrides (project-specific)
 ```
@@ -71,7 +71,7 @@ See [docs/hierarchy.md](docs/hierarchy.md) for details.
 ## Repository Structure
 
 ```
-ai-development-playbook/
+copilot-instructions/
 ├── README.md
 ├── .gitignore
 ├── _prompt/generation-prompt.md           # Original prompt — regenerate from scratch
