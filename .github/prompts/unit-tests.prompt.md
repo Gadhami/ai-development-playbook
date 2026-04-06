@@ -31,6 +31,8 @@ For each meaningful behavior:
 3. Cover: happy path, edge cases, error paths, boundary conditions.
 4. Use the project's test framework and assertion library.
 5. Mock only external dependencies. Never mock the code under test.
+6. **Consolidate with DataRow/InlineData:** if multiple test cases share identical Arrange/Act/Assert and only differ in inputs/expected results, write them as a single parameterized test with multiple data rows instead of separate methods.
+7. **Classify correctly:** if all dependencies are mocked → unit test (*.Tests.Unit project). If using real implementations or in-memory infra → component test (*.Tests.Component project).
 
 ## Step 4: Validate
 

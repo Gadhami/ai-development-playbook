@@ -11,6 +11,17 @@ applyTo: '**/*Tests*/**/*.cs'
 
 **Skip:** DTOs/POCOs, constructors that only assign fields, single-line pass-through methods, guard clauses, trivial LINQ projections, configuration/DI registration.
 
+## Unit vs Component Tests
+
+**Unit test:** Tests a single class in isolation. All dependencies are mocked. Lives in `*.Tests.Unit` projects.
+
+**Component test:** Tests multiple real classes working together (e.g., a handler + validator + repository with an in-memory database). Lives in `*.Tests.Component` projects.
+
+**Choose correctly:**
+- If you mock all dependencies → unit test. Put it in the Unit test project.
+- If you use real implementations, in-memory databases, or `WebApplicationFactory` → component test. Put it in the Component test project.
+- Never mix: a test that mocks some dependencies but uses real ones for others is usually a component test.
+
 ## Structure
 
 - One test class per production class. Mirror the source folder structure.
@@ -50,6 +61,10 @@ applyTo: '**/*Tests*/**/*.cs'
 
 - Use `[Theory]` + `[InlineData]` (xUnit), `[TestMethod]` + `[DataRow]` (MSTest), or `[TestCase]` (NUnit) for testing the same behavior with multiple inputs.
 - Each data row should test a meaningfully different scenario.
+- **Actively look for opportunities to consolidate:** if two or more tests share the same Arrange/Act/Assert structure and only differ in input values or expected results, combine them into a single parameterized test.
+- Prefer `[DataRow]`/`[InlineData]` over separate test methods for input variations (valid/invalid strings, boundary values, enum members, null vs empty, etc.).
+- Keep each data row self-descriptive — use the `DisplayName` parameter when the inputs alone don't make the scenario obvious.
+- Do NOT force-merge tests that have genuinely different setup, assertions, or behavior paths — only merge when the structure is truly identical.
 
 ## Anti-Patterns to Avoid
 
